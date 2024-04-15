@@ -16,12 +16,13 @@ This project aims to ensure the Registration Form accurately captures user infor
      ```
 - For managing WebDrivers the Selenium Manager library is used
   - No manual `ChromeDriver` or `geckodriver` downloaded
-  - No `bonigarcia/webdrivermanager` used. Because with the new version of Selenium, the `Selenium Manager` is a built in solution and `Boni Garcia` himself is also in that team. 
+  - No `bonigarcia/webdrivermanager` used. Because with the new version of Selenium, the `Selenium Manager` is a built-in solution and `Boni Garcia` himself is also in that team. 
 - `Data-driven testing (DDT)` is applied with the Scenario Outline annotation of Cucumber Framework
 - `Behavior-driven development` is applied
 - Source code does not contain any test data. I reach it via *.feature files in resources package
-- StepDefinitions does not contain page object. There is a separate package to store the page objects. `pageObjects` 
-  Assertions are in step definition classes with test data coming from the features
+- StepDefinitions does not contain page object. There is a separate package to store the page objects. `pageObjects`
+- Assertions are in step definition classes with test data coming from the features
+- The landing web page is stored in `src/test/resources/RegistrationForm.html` and navigated in `src/test/java/utilities/Hooks.java` under `@Before` annotation. The aim is to make test scenarios independent of each other.
 - `config.properties` file is introduced to keep the source code independent. 
   - For now only the browser type can be updated there. Chrome, Firefox and Edge browsers are supported.
   - In case of need, the username, password, etc. can be put there. 
@@ -37,7 +38,7 @@ This project aims to ensure the Registration Form accurately captures user infor
 ### Class naming conventions
 
 The following examples are working on `Foo` instances:
-- `*Step` for step definitons (e.g. `FooStep`)
+- `*Step` for step definitions (e.g. `FooStep`)
 - `*Page` for page objects (e.g. `FooPage`)
 - `*Helper`, `*Utils`, or plural form
   (e.g. `FooHelper`, `FooUtils`, `Foos`)
